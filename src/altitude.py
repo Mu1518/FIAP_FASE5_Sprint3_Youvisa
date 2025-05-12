@@ -14,7 +14,7 @@ def extrair_altitude_kml(caminho_kml):
         if coords is not None:
             for ponto in coords.text.strip().split(' '):
                 valores = ponto.split(',')
-                if len(valores) == 3:  # Certifique-se de que há latitude, longitude e altitude
+                if len(valores) == 3:  # verificando se há latitude, longitude e altitude
                     lon, lat, alt = map(float, valores)
                     dados.append(
                         {'Latitude': lat, 'Longitude': lon, 'Altitude': alt})
