@@ -151,6 +151,30 @@ A interface utiliza componentes do Streamlit como st.markdown, st.subheader, st.
  
  [LINK DO VIDEO DEMONSTRATIVO](https://youtu.be/joQEFZE4JyI)
 
+## DATASETS
+### INMET
+Os datasets IMNET foram processados conforme o descrito a seguir:
+  - Preenchimento de valores ausentes: Valores ausentes, representados por '-9999', '-9999.0', 'NA' ou '', substituídos pela média temporal da mesma hora e dia de outros anos. 
+  - Repetição do código WMO (código especifico da estação metereolólgica) em todas as linhas, garantindo a uniformidade dessa informação.
+  - Salvamento dos arquivos processados sem sobrescreve os originais
+
+### NDVI
+  - selecionados talhões aleatórios dos municipios de  Ajuricaba, Barreiras, Borborema, Brasilia, Bueno Brandão, Caçador, campo Mourão, Capanema, Cascavel, Coimbra, Contenda, Cruz Alta, Dois Vizinhos, Dourados, Grandes Rios, 
+Guanambi, Guarapuava, Itapeva, Jaboticabal, Passo Fundo, Pedro Afonso, Ponta Grossa, Rio Verde, Santa Maria do Herval, São Gotardo, São José de Ubá e Sorriso. 
+Os criterios selecionados no site Satveg:
+            * Índice: NDVI
+            * Satélite: Terra e Aqua
+            * QA: Marginal / Nuvem / Neve
+            * Pré-filtragem: NoData / Nuvem
+            * Filtros: SG4
+    Obs: o QA neve foi selecionado para os estados da região Sul do Brasil.
+
+### CLIMA, SOLO E MUNICIPIOS (IBGE)
+  - Arquivos  shp tratados utilizando geopandas e python para extrair os dados para cada coordenada geográfica e salvos em csv. No s
+
+
+ 
+
 ## ➡️ ARQUITETURA DO PROGRAMA
 
 O sistema é construído em Python e utiliza diversas bibliotecas para diferentes funcionalidades:
