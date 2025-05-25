@@ -105,7 +105,7 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 
 * Tratamento da Resposta: se a requisição for bem-sucedida, a resposta é convertida para JSON utilizando response.json(). Os dados relevantes são extraídos do campo "items" da resposta JSON e adicionados a uma lista chamada all_items.
 
-### Paginação, Tratamento de Erros e Dados Ausentes
+### Tratamento de Erros e Dados Ausentes
 
 * o código verifica se a resposta JSON contém a chave "hasMore" e, caso seja True, tenta encontrar o link para a próxima página na seção "links" com a relação "next". Se um link "next" for encontrado, o endpoint é atualizado com este novo link e o processo de requisição é repetido até que "hasMore" seja False ou não haja um link "next" disponível.
 
@@ -212,53 +212,6 @@ Resumo geral da arquitetura do programa:
 
 * Persistência de Modelos: Os modelos treinados são salvos localmente utilizando a biblioteca pickle, permitindo que sejam reutilizados sem a necessidade de retreinamento a cada execução da aplicação.
   
-### ➡️ COMPONENTES E FUNCIONALIDADES
-
-* Importação de Bibliotecas e Módulos: 
-A seção inicial do código importa todas as bibliotecas e módulos necessários para o funcionamento da aplicação.
-
-* Configuração da Página: 
-Define o título da página web exibida no navegador e utiliza st.markdown para adicionar títulos e subtítulos estilizados à interface do usuário.
-
-* Constantes
-Define constantes importantes como a url_base da API Oracle e o CONTENT_TYPE_JSON para os headers das requisições HTTP. Também configura a localidade para português do Brasil.
-
-* Decorador @st.cache_data
-Este decorador do Streamlit permite que os resultados dessas funções sejam cacheados, evitando que a API seja chamada novamente a cada vez que a aplicação é executada ou quando ocorre uma interação que causa um rerun do Streamlit.
-
-* Função carregar_dados_oracle(tipo)
-Função é responsável por realizar as requisições para a API Oracle para carregar diferentes tipos de dados (ndvi, produtividade, meteorologicos, custos). Ela constrói o endpoint da API com base no tipo solicitado e utiliza a biblioteca requests para fazer a requisição GET. A função lida com paginação (caso a API retorne um link "next"), erros de requisição, erros de decodificação JSON e ausência de dados. Os dados são retornados como um DataFrame do Pandas.
-
-* Funções Específicas de Carregamento (carregar_dados_produtividade, carregar_dados_meteorologicos, carregar_dados_custos, carregar_dados_ndvi)
-Wrappers simples para a função carregar_dados_oracle, cada uma chamando-a com o tipo de dado específico. A função carregar_dados_ndvi também realiza a conversão da coluna 'data' para o tipo datetime do Pandas. Elas também utilizam o decorador @st.cache_data.
-
-* Função analise_exploratoria()
-Esta função carrega todos os datasets utilizando as funções de carregamento e realiza uma análise exploratória básica. Ela verifica a presença de dados, exibe informações sobre limpeza dos dados (número de linhas, colunas, valores ausentes e duplicados), exibe os DataFrames completos e plota gráficos de séries históricas para cada tipo de dado utilizando a biblioteca Plotly. Ao final, oferece botões para download dos dados em formato CSV.
-
-* Funções de Formatação (formata_valores, formata_valores_posfixo)
-Estas funções auxiliam na formatação de valores numéricos para exibição na interface do usuário, adicionando prefixos (como "R$ ") ou posfixos (como "ha" ou "kg/ha") e ajustando a escala (milhares, milhões) para melhor legibilidade.
-
-* Função exibir_pagina_sobre()
-Exibe informações sobre o projeto, o time de desenvolvimento e os próximos passos, utilizando st.subheader e st.write. Também inclui um componente de feedback utilizando st.feedback.
-
-* Função exibir_links_importantes()
-Exibe links relevantes, como o repositório do GitHub do projeto e o link para um vídeo de apresentação.
-
-* Função treinar_modelos_supervisionados(X, y, modelos_selecionados)
-Esta função recebe uma matriz de features (X), um vetor target (y) e uma lista de modelos a serem treinados. Ela divide os dados em conjuntos de treinamento e teste, define um dicionário contendo os modelos de regressão do Scikit-learn e seus respectivos grids de hiperparâmetros para otimização com GridSearchCV. Para cada modelo selecionado, realiza o treinamento e a otimização dos hiperparâmetros, faz as predições no conjunto de teste e calcula o RMSE (Root Mean Squared Error). Retorna um dicionário contendo os resultados de cada modelo (score, melhor modelo treinado e melhores parâmetros).
-
-* Função exibir_pagina_treinamento()
-Cria a interface para a página de treinamento de modelos. Permite ao usuário selecionar os modelos de regressão que deseja treinar através de um st.multiselect. Ao clicar no botão "Iniciar Treinamento", a função carrega os dados de produtividade, prepara os dados para treinamento (removendo colunas não numéricas e a coluna target, e realizando codificação one-hot para variáveis categóricas com pd.get_dummies), chama a função treinar_modelos_supervisionados e salva os modelos treinados (todos e o melhor) em arquivos .pkl no diretório modelos_treinados. Exibe os resultados do treinamento, incluindo o melhor modelo e seus detalhes.
-
-* Função exibir_pagina_produtividade()
-Cria a interface para a página de previsão de produtividade. Permite ao usuário selecionar a localidade e a cultura a partir dos dados carregados, bem como o ano e mês de plantio e a área plantada. Ao clicar no botão "Prever Produtividade" ou "Calcular", a função carrega o melhor modelo treinado, prepara os dados de entrada do usuário em um DataFrame, realiza a codificação one-hot, garante que as features de entrada correspondam às features esperadas pelo modelo, realiza a predição e exibe os resultados, incluindo a produtividade prevista por hectare e a produção total estimada.
-
-* Função main()
-É a função principal que configura a aplicação Streamlit. Ela cria um menu horizontal de botões para navegar entre as diferentes páginas da aplicação (Sobre o Projeto, Links Importantes, Análise Exploratória, Treinamento de Modelos, Previsão de Produtividade). Utiliza st.session_state para controlar qual página está ativa e chama a função correspondente para exibir o conteúdo da página selecionada.
-
-* Bloco if __name__ == "__main__":
-Este bloco garante que a função main() seja executada apenas quando o script Python é executado diretamente (e não quando é importado como um módulo). Ele também inicializa st.session_state.pagina_ativa caso não esteja definido.
-
 ### ➡️ PERSISTÊNCIA E CACHING
 
 * Caching de Dados
@@ -295,10 +248,7 @@ A lógica subjacente é que um NDVI elevado e sustentado durante períodos crít
 
 ## 📊 ANÁLISE EXPLORATÓRIA DOS DADOS
 
-A análise exploratoria teve como objetivo a avaliação da qualidade dos dados, informando as decisões subsequentes de pré-processamento e engenharia de features para otimizar o desempenho dos modelos de machine learning.
-
-![AED](https://github.com/Ioiofmanzali/FIAP_FASE_5_SPRINT_2/blob/main/assets/menu_principal.JPG)
-Observação: A figura apresentada tem como objetivo ilustrar a aparência geral do menu. O menu completo contem itens adicionais que não foram incluídos na imagem para fins de clareza e concisão.
+A análise exploratoria teve como objetivo a avaliação da qualidade dos dados, informando as decisões subsequentes de pré-processamento e engenharia de features para otimizar o desempenho dos modelos de Machine Learning.
 
 ## 📈 TREINAMENTO E ESCOLHA DO MELHOR MODELO DE ML
 
@@ -329,24 +279,11 @@ A saída deste processo consistiu em estimativas quantitativas da produtividade 
 [INMET](https://portal.inmet.gov.br/dadoshistoricos)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CONAB](https://www.conab.gov.br/info-agro/custos-de-producao/planilhas-de-custo-de-producao/item/16269-serie-historica-custos-milho-2-safra-2005-a-2021)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SATVEG](&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
 
 ## 📣 PRÓXIMOS PASSOS
-REESCREVER TB
 
-Para essa primeira versão foi selecionado o município de Sorriso, localizado no Estado do Mato Grosso e a série histórica de dados da safra do milho de 2015 a 10 de fevereiro de 2025.
-
-o programa foi desenvlvido para ser escalável, portanto futuras versões poderão incuir: 
-
-* Escalabilidade para outras localidades e culturas: 
-Isso envolverá garantir que os dados para novas localidades e culturas sejam carregados corretamente da API Oracle e que o processo de treinamento e previsão possa ser generalizado.
-
-* Inclusão de novas features: 
-Dados de tipo de solo, uso de agrotóxicos e adjuvantes, tipos de cultivares, dentre outros.
-
-* Melhoria da interface do usuário: 
-A interface poderia ser aprimorada com mais visualizações, explicações e feedback para o usuário.
-
-* Monitoramento e retreinamento dos modelos: Os modelos de machine learning podem se degradar com o tempo à medida que novos dados ficam disponíveis.
-
-Os próximos passos se concentrarão em refinar e expandir as funcionalidades existentes para criar uma solução ainda mais robusta e precisa.
+Este é um projeto em evolução. Na sua versão 1.0.0 foi selecionada a cultura de milho da cidade de  Sorriso, localizada no estado do Mato Grosso.
+Para a versão 2.0.0, expandimos o escopo para incluir outras culturas e municípios do território nacional.
+O programa foi construido para ser escalável e para novas versões esperamos acrescentar dados relacionados a tipo de clima e solo, a partir de coordenadas geográficas.
+            
 
 ## :octocat: CONTRIBUIÇÕES AO PROJETO
 
@@ -371,12 +308,11 @@ Seu Pull Request será revisado pela equipe e, se tudo estiver correto, será ac
      
 2. No terminal digite os comandos cd e run para abrir o arquico e, em seguida, o navegador onde o aplicativo será aberto:
  
- ** após executar o comando streamlit run, o Streamlit irá iniciar um servidor local e abrir automaticamente o seu aplicativo em uma nova aba do seu navegador web padrão.
+ ** após executar o comando streamlit run app.py, o Streamlit irá iniciar um servidor local e abrir automaticamente o seu aplicativo em uma nova aba do seu navegador web padrão.
  
  ** também aparecerá no terminal o endereço local onde o aplicativo está rodando (pode copiar e colar esse endereço no seu navegador, caso ele não abra automaticamente).
 
-![strun](https://github.com/user-attachments/assets/bc0aa814-3564-406c-8c84-c6969ddecbe3)
-Obs.: URLs geradas de forma automática pelo Streamlit
+
 
 ## 📁 Estrutura de pastas
 
