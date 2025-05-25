@@ -133,17 +133,19 @@ Maiores informações sobre a instalação e uso dessas linguagens de Programaç
 
 A interface do usuário é organizada em diferentes páginas, acessíveis através de botões no menu principal:
 
-![pagina_inicial](https://github.com/Ioiofmanzali/FIAP_FASE_5_SPRINT_2/blob/main/assets/safrapro1.JPG)
+![pagina_inicial](assets/app_inicio.png)
 
-* Sobre o Projeto: Fornece informações contextuais sobre o projeto, o time de desenvolvimento e os planos futuros.
+* **Sobre o Projeto**: Fornece informações contextuais sobre o projeto, o time de desenvolvimento e os planos futuros.
 
-* Links Importantes: Contém os links relevantes do projeto 
+* **Links Importantes**: Contém os links relevantes do projeto.
 
-* Análise Exploratória: Permite visualizar os dados carregados da API Oracle, realizar uma análise básica de limpeza e visualizar séries históricas através de gráficos interativos. Também oferece a opção de baixar os dados em formato CSV.
+* **Carga de Dados**: Usado para fazer upload de dados em formato CSV para o banco de dados Oracle para ser usado via Rest API no treinamento dos modelos de IA.
 
-* Treinamento de Modelos: Permite ao usuário selecionar e treinar diferentes modelos de regressão supervisionada utilizando os dados de produtividade. Exibe os resultados do treinamento e salva os modelos treinados.
+* **Análise Exploratória**: Permite visualizar os dados carregados da API Oracle, realizar uma análise básica de limpeza e visualizar séries históricas através de gráficos interativos. Também oferece a opção de baixar os dados em formato CSV.
 
-* Previsão de Produtividade: Permite ao usuário inserir parâmetros (localidade, cultura, ano e mês de plantio, área plantada) e obter uma previsão da produtividade utilizando o melhor modelo treinado.
+* **Treinamento de Modelos**: Permite ao usuário selecionar e treinar diferentes modelos de regressão supervisionada utilizando os dados de produtividade. Exibe os resultados do treinamento e salva os modelos treinados.
+
+* **Previsão de Produtividade**: Permite ao usuário inserir parâmetros (localidade, cultura, ano e mês de plantio, área plantada) e obter uma previsão da produtividade utilizando o melhor modelo treinado.
 
 A interface utiliza componentes do Streamlit como st.markdown, st.subheader, st.write, st.dataframe, st.plotly_chart, st.download_button, st.selectbox, st.multiselect, st.number_input, st.button, st.info, st.success, st.warning, st.error, st.expander, st.balloons e st.feedback para criar uma experiência mais  interativa para o usuário.
 
