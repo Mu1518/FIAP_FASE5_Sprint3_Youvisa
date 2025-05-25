@@ -51,7 +51,7 @@ O projeto foi desenvolvido em Python, utilizando as bibliotecas Streamlit, Panda
      - SIDRA/IBGE: dados agricolas para as culturas de Triticale, Trigo, Amendoim, Batata-inglesa, Feijão (1a safra), Tomate, Sorgo e Soja.
 
 
-    * MODULARIZAÇÃO DA APLICAÇÃO:
+* MODULARIZAÇÃO DA APLICAÇÃO:
    
     A nova estrutura da aplicação encontrase modularizada da seguinte forma:
     
