@@ -306,7 +306,7 @@ O projeto utiliza os modelos com o objetivo de encontrar a combinação que ofer
 
 Os modelos implementados são:
 
-![modelos]()
+![modelos](https://github.com/Ioiofmanzali/Sprint3_FIAP_Grupo09/blob/main/assets/modelos.JPG)
 
 Método selecionado para selecionar o 'melhor modelo' com os 'melhores hiperparâmetros': GridSearchCV
 
