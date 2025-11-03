@@ -6,7 +6,7 @@
 
 <br>
 
-# PROJETO - :artificial_satellite: SPRINT 1 YOUVISA 
+# PROJETO - :airplane: SPRINT 1 YOUVISA 
 
 ![capa](https://github.com/Mu1518/FIAP-FASE3-Sprint1_Youvisa/blob/main/assets/Capa_Sp1.png)
 
