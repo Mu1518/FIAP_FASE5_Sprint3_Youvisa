@@ -8,7 +8,7 @@
 
 # PROJETO - :artificial_satellite: SPRINT 3 INGREDION  
 
-![capa](assets/capa.jpeg)
+![capa](https://github.com/Mu1518/FIAP-FASE3-Sprint1_Youvisa/blob/main/assets/Capa_Sp1.png)
 
 ## Grupo 9
 
