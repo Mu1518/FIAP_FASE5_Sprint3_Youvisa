@@ -6,7 +6,7 @@
 
 <br>
 
-# PROJETO - :airplane: SPRINT 1 YOUVISA 
+# PROJETO - <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/0dd30789-c0b7-4310-92b9-fa4bd6091244" />  SPRINT 1 YOUVISA 
 
 ![capa](https://github.com/Mu1518/FIAP-FASE3-Sprint1_Youvisa/blob/main/assets/Capa_Sp1.png)
 
