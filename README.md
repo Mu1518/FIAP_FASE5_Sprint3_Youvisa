@@ -34,10 +34,22 @@ Documentação Técnica do Projeto "CHALLENGE YOUVISA - Sprint 1"
 Autores: Jonatas Gomes, Iolanda Manzali, Murilo Nasser, Pedro Sousa, Amanda Fragnan
 
 ## 🔍 SOBRE O PROJETO
-
 Bem-vindos ao Sprint 1 do Challenge realizado em parceria com a Youvisa.
+V1----
 
 Nesta etapa, será proposta uma solução para o problema, juntamente com a estruturação do projeto, contemplando a seleção das tecnologias a serem empregadas e o mapeamento dos fluxos de dados.
+V2-------
+A **YOUVISA**, empresa especializada na emissão de vistos e passaportes, enfrenta desafios de **ineficiência operacional** devido ao alto volume de consultas repetitivas, **atendimento fragmentado entre diferentes canais** e **dificuldade na gestão de documentos enviados por clientes**.
+
+Para resolver esse cenário, o grupo desenvolveu o **VistoBot Multi-Channel** — uma **plataforma inteligente de atendimento e automação** que combina **chatbots multicanais**, **Processamento de Linguagem Natural (NLP)** e **Automação Robótica de Processos (RPA)**.
+
+A solução tem como objetivos:
+- **Automatizar até 80% das interações** iniciais com o cliente por meio de respostas rápidas e triagem automatizada de documentos;
+- **Unificar os canais de atendimento** (Telegram, WhatsApp e Webchat), mantendo histórico e consistência nas respostas;
+- **Validar documentos de forma automática**, utilizando **OCR (Reconhecimento Óptico de Caracteres)** integrado ao backend em Python;
+- **Garantir segurança e rastreabilidade** dos dados com armazenamento no **Oracle APEX**, seguindo práticas da **LGPD**.
+
+Em síntese, o **VistoBot Multi-Channel** reduz custos operacionais, melhora a experiência do usuário e oferece um fluxo inteligente de atendimento que decide, de forma autônoma, quando resolver a solicitação via bot ou encaminhar para o atendimento humano.
 
 Este repositório tem como finalidade documentar e armazenar todo o trabalho desenvolvido ao longo do Sprint 1.   
 
