@@ -39,6 +39,24 @@ Focamos na comunicação clara com o cliente: notificações automatizadas de mu
 
 ---
 
+## **🛠️ TECNOLOGIAS UTILIZADAS**
+
+ **Frontend:**
+- [Next.js 15 (App Router)](https://nextjs.org/) + React 19
+- Tailwind CSS v4 + TypeScript
+
+ **Backend & Serviços:**
+- Python 3.12 + FastAPI
+- PostgreSQL Nuvem Neon
+- Autenticação local JWT
+
+ **Inteligência Artificial & Nuvem:**
+- [Google Gemini API](https://ai.google.dev/) (Integração NLP e Conversação)
+- [AWS Textract](https://aws.amazon.com/pt/textract/) (Leitura e OCR Semântico)
+- [AWS Rekognition](https://aws.amazon.com/pt/rekognition/) (Visão Computacional - Identity)
+
+---
+
 ## 🚀 **USO ESTRATÉGICO DE INTELIGÊNCIA ARTIFICIAL**
 
 Nós aplicamos Inteligência Artificial de ponta em múltiplas camadas do produto para garantir velocidade, precisão e segurança durante todo o andamento processual. É fundamental destacar os seguintes usos de IA:
@@ -202,24 +220,6 @@ Para acessar informações específicas do processo, o chatbot solicita **autent
 Após autenticado, o sistema consulta as informações do banco de dados e fornece respostas contextualizadas ao usuário.
 
 ![Atendimento Chatbot](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/16.chatbot_atendimento.png)
----
-
-## **🛠️ TECNOLOGIAS UTILIZADAS**
-
- **Frontend:**
-- [Next.js 15 (App Router)](https://nextjs.org/) + React 19
-- Tailwind CSS v4 + TypeScript
-
- **Backend & Serviços:**
-- Python 3.12 + FastAPI
-- PostgreSQL Nuvem Neon
-- Autenticação local JWT
-
- **Inteligência Artificial & Nuvem:**
-- [Google Gemini API](https://ai.google.dev/) (Integração NLP e Conversação)
-- [AWS Textract](https://aws.amazon.com/pt/textract/) (Leitura e OCR Semântico)
-- [AWS Rekognition](https://aws.amazon.com/pt/rekognition/) (Visão Computacional - Identity)
-
 ---
 
 ## **COMO EXECUTAR O PROJETO MÚLTIPLAS PASTAS**
