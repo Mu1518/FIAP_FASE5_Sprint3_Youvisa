@@ -25,36 +25,6 @@
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/company/inova-fusca">Andre Godoi Chaviato</a>
 
-## 🔍 SOBRE O PROJETO
-O **PROJETO SPRINT 3 YOUVISA** marca a evolução da plataforma YouVisa para um sistema inteligente e maduro de acompanhamento de processos de imigração e vistos. Nesta fase, a plataforma deixa de ser apenas uma ferramenta de entrada de documentos para se tornar uma solução proativa, orientada a eventos (event-driven) e baseada em IA para gerenciar o ciclo de vida completo de cada solicitação.
-
-Focamos na comunicação clara com o cliente: notificações automatizadas de mudança de estado, uma interface com a linha do tempo e um Chatbot IA inteligente que compreende as intenções do usuário e responde a dúvidas técnicas traduzindo-as para uma linguagem simples e acessível. A validação ágil de documentos por IA pela equipe administrativa reforça o fluxo operacional, escalando o atendimento.
-
-![alt text](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
-![alt text](https://img.shields.io/badge/React-19-blue?logo=react)
-![alt text](https://img.shields.io/badge/FastAPI-0.110-009688?logo=fastapi)
-![alt text](https://img.shields.io/badge/PostgreSQL-Neon-336791?logo=postgresql)
-![alt text](https://img.shields.io/badge/AWS-Textract_&_Rekognition-FF9900?logo=amazonaws)
-![alt text](https://img.shields.io/badge/AI-Google_Gemini-8E75B2?logo=google)
-
----
-
-## **🛠️ TECNOLOGIAS UTILIZADAS**
-
- **Frontend:**
-- [Next.js 15 (App Router)](https://nextjs.org/) + React 19
-- Tailwind CSS v4 + TypeScript
-
- **Backend & Serviços:**
-- Python 3.12 + FastAPI
-- PostgreSQL Nuvem Neon
-- Autenticação local JWT
-
- **Inteligência Artificial & Nuvem:**
-- [Google Gemini API](https://ai.google.dev/) (Integração NLP e Conversação)
-- [AWS Textract](https://aws.amazon.com/pt/textract/) (Leitura e OCR Semântico)
-- [AWS Rekognition](https://aws.amazon.com/pt/rekognition/) (Visão Computacional - Identity)
-
 ---
 ## 🔍 Sobre o Projeto
 
@@ -90,7 +60,7 @@ Essa abordagem permite **reduzir retrabalho, melhorar a experiência do usuário
 - Tailwind CSS v4  
 - TypeScript  
 
-O Next.js é um framework React amplamente utilizado para construção de aplicações web modernas, oferecendo recursos como **renderização no servidor (SSR), geração estática de páginas e roteamento otimizado**, melhorando desempenho e experiência do usuário. :contentReference[oaicite:0]{index=0}
+O Next.js é um framework React amplamente utilizado para construção de aplicações web modernas, oferecendo recursos como **renderização no servidor (SSR), geração estática de páginas e roteamento otimizado**, melhorando desempenho e experiência do usuário.
 
 ---
 
