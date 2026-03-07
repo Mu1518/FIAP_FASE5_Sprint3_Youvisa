@@ -76,7 +76,132 @@ O projeto utiliza um banco de dados relacional robusto hospedado na nuvem: **Pos
 - `notificacoes`: Gerencia todos os disparos transacionais baseados em evento (event-driven) quando há mudanças nos processos.
 
 ---
+## 🖥️ Demonstração do Sistema
 
+Esta seção apresenta uma visão prática da plataforma **YouVisa** desenvolvida na Sprint 3.  
+A seguir são exibidas as principais funcionalidades da aplicação, incluindo a experiência do usuário, o fluxo de criação de processos e as ferramentas administrativas apoiadas por Inteligência Artificial.
+
+---
+
+## 🌐 Experiência do Usuário — Portal do Cliente
+
+### Página Inicial e Criação de Conta
+
+A página inicial centraliza os principais serviços da plataforma e orienta o usuário no início do processo de solicitação de visto.
+
+![Website](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/01.website.png)
+
+Caso o cliente ainda não possua uma conta, ele pode realizar um cadastro simples informando **nome, telefone e e-mail**.
+
+![Criar Conta](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/02.criar_conta_cliente.png)
+
+Para garantir segurança no acesso, o sistema utiliza autenticação **OTP (One-Time Password)** enviada por e-mail.
+
+![Verificar Email](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/03.verificar_email.png)
+
+Após o envio da solicitação de login, o usuário recebe o código de verificação em seu e-mail para validar o acesso à plataforma.
+
+![Código enviado](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/04.codigo_enviado.png)
+
+Uma vez autenticado, o cliente passa a ter acesso ao painel onde pode visualizar e acompanhar seus processos de solicitação de visto.
+
+![Processos Cliente](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/05.processos_cliente.png)
+
+---
+
+### Abertura de um Novo Processo
+
+O cliente pode iniciar um novo processo diretamente pela plataforma, enviando os documentos necessários para análise.
+
+![Novo Processo](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/06.novo_processo.png)
+
+O sistema permite o **upload estruturado de documentos essenciais**, garantindo organização e padronização das informações enviadas.
+
+![Upload de Docs](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/07.upload_documentos.png)
+
+Após o envio dos documentos, o processo passa automaticamente para a etapa de **análise**, onde será avaliado pela equipe administrativa e pelos mecanismos de validação automatizada do sistema.
+
+![Processo em análise](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/08.processo_analise.png)
+
+---
+
+## ⚙️ Painel Administrativo e Uso de Inteligência Artificial
+
+A plataforma também conta com um **painel administrativo completo**, que permite à equipe interna acompanhar, validar e atualizar os processos dos clientes.
+
+![Dashboard Admin](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/09.admin_funcionario.png)
+
+Nesse ambiente, os administradores podem:
+
+- analisar documentos enviados
+- atualizar o status do processo
+- validar informações automaticamente utilizando IA
+- acompanhar o histórico de transições do processo
+
+---
+
+### Validação Automatizada de Documentos com IA
+
+Um dos principais recursos do sistema é a funcionalidade **Aprovar com IA**, que utiliza o serviço **Amazon Textract** para extrair automaticamente dados do passaporte enviado pelo cliente.
+
+O sistema analisa campos como:
+
+- Nome completo  
+- Número do documento  
+- Data de expiração  
+
+Essa verificação automatizada reduz erros de digitação e agiliza o processo de validação.
+
+![Aprovar Doc por IA](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/10.aprovar_documento_ia.png)
+
+---
+
+### Verificação de Identidade por Comparação Facial
+
+Para aumentar a segurança do processo, o sistema utiliza o **Amazon Rekognition** para realizar **comparação biométrica entre a foto enviada pelo usuário e a foto presente no passaporte**.
+
+Caso o nível de similaridade esteja dentro da margem de segurança definida, a identidade é validada automaticamente.
+
+![Validar Foto IA](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/11.validar_fotos_ia.png)
+
+Caso a validação identifique inconsistências ou baixa similaridade entre as imagens, o sistema solicita ao usuário o **reenvio da fotografia**, garantindo maior confiabilidade no processo.
+
+![Usuário reenviar foto](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/12.usuario_reenviar_foto.png)
+
+---
+
+## 📩 Comunicações Automatizadas
+
+A plataforma utiliza uma arquitetura **orientada a eventos (event-driven)**.  
+Sempre que ocorre uma mudança relevante no status do processo, o sistema dispara automaticamente notificações ao cliente.
+
+Após a validação completa dos documentos e etapas do processo, o cliente é informado quando o visto é aprovado.
+
+![Visto aprovado](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/13.visto_aprovado.png)
+
+Além disso, notificações também são enviadas por **e-mails HTML interativos**, informando de forma clara o novo status do processo e eventuais ações necessárias.
+
+![Email Visto Aprovado](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/14.email_visto_aprovado.png)
+
+---
+
+## 🤖 Atendimento Inteligente via Chatbot
+
+A plataforma também conta com um **Chatbot baseado em IA**, disponível para auxiliar os usuários em tempo real.
+
+O assistente é capaz de responder perguntas como:
+
+- Qual o status do meu processo?
+- Está faltando algum documento?
+- Qual é o próximo passo do meu pedido de visto?
+
+![Login Chatbot](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/15.login_chatbot.png)
+
+Para acessar informações específicas do processo, o chatbot solicita **autenticação segura via OTP**, garantindo que apenas o titular tenha acesso aos dados.
+
+Após autenticado, o sistema consulta as informações do banco de dados e fornece respostas contextualizadas ao usuário.
+
+![Atendimento Chatbot](https://github.com/Mu1518/FIAP_FASE5_Sprint3_Youvisa/blob/main/assets/16.chatbot_atendimento.png)
 ---
 
 ## **🛠️ TECNOLOGIAS UTILIZADAS**
